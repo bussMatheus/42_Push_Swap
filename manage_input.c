@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manage_input.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 17:05:33 by mely-pan          #+#    #+#             */
+/*   Updated: 2024/12/18 20:06:57 by mely-pan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./include/push_swap.h"
 
 int	ft_isvalid_n(char *number)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (number[i] == '+' || number[i] == '-')
@@ -38,8 +50,8 @@ int	ft_isdup(char **numbers, int n, int size, int flag_argc)
 
 int	check_str_numbers(char **numbers, t_stack_node **a)
 {
-	int	i;
-	int n;
+	int		i;
+	long	n;
 
 	i = 0;
 	while (numbers[i])
@@ -49,18 +61,18 @@ int	check_str_numbers(char **numbers, t_stack_node **a)
 		if (!ft_isvalid_n(numbers[i]))
 			return (free_splited(numbers), 0);
 		n = ft_atoi(numbers[i]);
-		if (n > INT_MAX || n < INT_MIN || ft_isdup(numbers, n, i, 0))
+		if (n > 2147483647 || n < -2147483648 || ft_isdup(numbers, n, i, 0))
 			return (free_lst(a), free_splited(numbers), 0);
 		if (!append(a, n))
-			return (free_splited(numbers), free_lst(a) ,0);
+			return (free_splited(numbers), free_lst(a), 0);
 	}
 	return (free_splited(numbers), 1);
 }
 
 int	check_argv_numbers(int argc, char **argv, t_stack_node **a)
 {
-	int	i;
-	int	n;
+	int		i;
+	long	n;
 
 	i = argc - 1;
 	while (i > 0)
@@ -76,9 +88,10 @@ int	check_argv_numbers(int argc, char **argv, t_stack_node **a)
 	}
 	return (1);
 }
-//manage_input will receive our arguments, check if they are valid
-//and if they are a string to be splited or many numbers as arguments
-int manage_input(int argc, char **argv, t_stack_node **a)
+// manage_input will receive our arguments, check if they are valid
+// and if they are a string to be splited or many numbers as arguments
+
+int	manage_input(int argc, char **argv, t_stack_node **a)
 {
 	char	**str_numbers;
 	int		i;

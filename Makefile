@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/09 17:08:28 by mely-pan          #+#    #+#              #
+#    Updated: 2024/12/09 17:34:56 by mely-pan         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRC = push_swap.c manage_input.c clean.c \
 	ft_error.c ft_lst.c ft_lst_utils.c test_ft.c \
 	p_and_rr_operations.c s_operations.c r_operations.c \
@@ -26,14 +38,14 @@ NC = \033[0m  # No Color (reset)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(FLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 	@echo "$(GREEN)Compiled push_swap successfully$(NC)"
 
 #Run libft's makefile in the libft directory
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)
 
-$(OBJS): %.o: %.c
+$(OBJ): %.o: %.c
 	@echo "$(BLUE)Compiling $<...$(NC)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 

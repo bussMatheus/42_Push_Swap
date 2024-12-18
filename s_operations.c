@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   s_operations.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 17:05:57 by mely-pan          #+#    #+#             */
+/*   Updated: 2024/12/09 18:29:03 by mely-pan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./include/push_swap.h"
 
 //sa: swap the first two elements at top of the stack a
 void	sa(t_stack_node *a, int i)
 {
-	int tmp;
+	int	tmp;
 
 	if (a == NULL || a->next == NULL)
 		return ;
@@ -16,7 +28,7 @@ void	sa(t_stack_node *a, int i)
 
 void	sb(t_stack_node *b, int i)
 {
-	int tmp;
+	int	tmp;
 
 	if (b == NULL || b->next == NULL)
 		return ;

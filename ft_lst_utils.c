@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lst_utils.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 17:04:54 by mely-pan          #+#    #+#             */
+/*   Updated: 2024/12/09 19:46:16 by mely-pan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./include/push_swap.h"
 
 int	ft_lst_len(t_stack_node *stack)
@@ -17,7 +29,7 @@ t_stack_node	*ft_lstnew2(int n)
 {
 	t_stack_node	*new;
 
-	new = (t_stack_node *)malloc(sizeof (t_stack_node));
+	new = (t_stack_node *)malloc(sizeof(t_stack_node));
 	if (!new)
 		return (NULL);
 	new->n = n;
@@ -63,8 +75,8 @@ t_stack_node	*find_min_node(t_stack_node *stack)
 	{
 		if (stack->n < num)
 		{
-				num = stack->n;
-				node = stack;
+			num = stack->n;
+			node = stack;
 		}
 		stack = stack->next;
 	}
@@ -76,15 +88,4 @@ void	init_b(t_stack_node **a, t_stack_node **b)
 	if (ft_lst_len(*a) > 4)
 		pb(a, b);
 	pb(a, b);
-}
-
-int	sorted_stack(t_stack_node *a)
-{
-	while (a && a->next)
-	{
-		if (a->n > a->next->n)
-			return (0);
-		a = a->next;
-	}
-	return (1);
 }

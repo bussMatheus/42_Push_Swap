@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lst.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 17:05:29 by mely-pan          #+#    #+#             */
+/*   Updated: 2024/12/09 19:47:00 by mely-pan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./include/push_swap.h"
 
 // !Have a look in this function, if (a && new),
 // !for the first concatenation 'a' might be NULL.
 int	append(t_stack_node **a, int n)
 {
-	t_stack_node *new;
+	t_stack_node	*new;
 
 	new = ft_lstnew2(n);
 	if (!new)
@@ -15,6 +27,7 @@ int	append(t_stack_node **a, int n)
 	*a = new;
 	return (1);
 }
+
 void	set_targetb(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_a;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   r_operations.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 17:05:50 by mely-pan          #+#    #+#             */
+/*   Updated: 2024/12/09 18:28:23 by mely-pan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./include/push_swap.h"
 
 void	ra(t_stack_node **a, int i)
@@ -17,7 +29,7 @@ void	ra(t_stack_node **a, int i)
 	aux->prev = curr_node;
 	aux->next = NULL;
 	if (i == 0)
-		write(1, "ra\n",3);
+		write(1, "ra\n", 3);
 }
 
 void	rb(t_stack_node **b, int i)
@@ -37,7 +49,7 @@ void	rb(t_stack_node **b, int i)
 	aux->prev = curr_node;
 	aux->next = NULL;
 	if (i == 0)
-		write(1, "rb\n",3);
+		write(1, "rb\n", 3);
 }
 
 void	rr(t_stack_node **a, t_stack_node **b)

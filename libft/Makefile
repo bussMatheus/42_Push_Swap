@@ -1,13 +1,18 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/09 17:28:47 by mely-pan          #+#    #+#              #
+#    Updated: 2024/12/09 17:29:49 by mely-pan         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # Source files
-SRC = SRC/ft_atoi.c SRC/ft_bzero.c SRC/ft_isalnum.c SRC/ft_isalpha.c \
-    SRC/ft_isascii.c SRC/ft_isdigit.c SRC/ft_isprint.c SRC/ft_memchr.c \
-    SRC/ft_memcmp.c SRC/ft_memset.c SRC/ft_strchr.c SRC/ft_strlcat.c \
-    SRC/ft_strlen.c SRC/ft_strncmp.c SRC/ft_strnstr.c SRC/ft_strrchr.c \
-    SRC/ft_tolower.c SRC/ft_toupper.c SRC/ft_calloc.c SRC/ft_memcpy.c \
-    SRC/ft_strjoin.c SRC/ft_strlcpy.c SRC/ft_strdup.c SRC/ft_substr.c \
-    SRC/ft_memmove.c SRC/ft_strtrim.c SRC/ft_putchar_fd.c SRC/ft_putstr_fd.c \
-    SRC/ft_putendl_fd.c SRC/ft_putnbr_fd.c SRC/ft_itoa.c SRC/ft_strmapi.c \
-    SRC/ft_striteri.c SRC/ft_split.c
+SRC = SRC/ft_atoi.c SRC/ft_split.c SRC/ft_isdigit.c SRC/ft_strlcpy.c \
+	SRC/ft_strlen.c
 
 # Object files
 OBJS = $(SRC:%.c=%.o)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lst_utils2.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 17:05:24 by mely-pan          #+#    #+#             */
+/*   Updated: 2024/12/09 19:46:05 by mely-pan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./include/push_swap.h"
 
 void	current_index(t_stack_node *stack)
@@ -72,7 +84,8 @@ void	set_rr_rrr(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest)
 			rr(a, b);
 		indexes(a, b);
 	}
-	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
+	else if (!(cheapest->above_median)
+		&& !(cheapest->target_node->above_median))
 	{
 		while (*b != cheapest->target_node && *a != cheapest)
 			rrr(a, b);
@@ -100,4 +113,3 @@ void	set_top(t_stack_node **stack, t_stack_node *top, int flag)
 		}
 	}
 }
-

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   clean.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 17:02:32 by mely-pan          #+#    #+#             */
+/*   Updated: 2024/12/09 18:15:12 by mely-pan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./include/push_swap.h"
 
 void	free_splited(char **numbers)
@@ -22,7 +34,6 @@ void	free_lst(t_stack_node **lst)
 	while (*lst)
 	{
 		aux = (*lst)->next;
-		//printf("Freeing node: %d\n", (*lst)->n);
 		(*lst)->n = 0;
 		free(*lst);
 		*lst = aux;

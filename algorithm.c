@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 17:01:25 by mely-pan          #+#    #+#             */
+/*   Updated: 2024/12/18 18:16:42 by mely-pan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./include/push_swap.h"
 
 void	sort_three(t_stack_node **a)
@@ -29,7 +41,7 @@ void	sort_it(t_stack_node **a, t_stack_node **b)
 		set_top(b, cheapest->target_node, 1);
 		pb(a, b);
 	}
-	sort_three (a);
+	sort_three(a);
 	while (*b)
 	{
 		indexes(a, b);
@@ -53,9 +65,20 @@ void	sort_algo(t_stack_node **a, t_stack_node **b)
 		if ((*a)->n > (*a)->next->n)
 			sa(*a, 0);
 	}
-	if (len == 3)
+	else if (len == 3)
 		sort_three(a);
 	else
 		sort_it(a, b);
 	current_index(*a);
+}
+
+int	sorted_stack(t_stack_node *a)
+{
+	while (a && a->next)
+	{
+		if (a->n > a->next->n)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }
