@@ -6,7 +6,7 @@
 /*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:20:13 by mely-pan          #+#    #+#             */
-/*   Updated: 2024/12/09 19:54:34 by mely-pan         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:48:30 by mely-pan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,15 @@ typedef struct s_stack_node
 
 /*              CHECK FUNCTIONS            */
 int						ft_isvalid_n(char *numbers);
-int						ft_isdup(char **numbers, int n, int i, int flag_argc);
 int						sorted_stack(t_stack_node *a);
 int						check_str_numbers(char **numbers, t_stack_node **a);
+int						ft_isdup(char **numbers, int n, int i, int flag_argc);
+int						manage_input(int argc, char **argv, t_stack_node **a);
 int						check_argv_numbers(int argc, char **argv,
 							t_stack_node **a);
 
 /*              CLEAN FUNCTIONS            */
+void					ft_error(void);
 void					free_splited(char **numbers);
 void					free_lst(t_stack_node **lst);
 
@@ -46,18 +48,18 @@ void					free_lst(t_stack_node **lst);
 int						append(t_stack_node **a, int n);
 int						ft_lst_len(t_stack_node *stack);
 void					current_index(t_stack_node *stack);
+void					set_cost(t_stack_node *a, t_stack_node *b);
 void					init_b(t_stack_node **a, t_stack_node **b);
 void					indexes(t_stack_node **a, t_stack_node **b);
 void					set_target(t_stack_node *a, t_stack_node *b);
 void					set_targetb(t_stack_node *a, t_stack_node *b);
-void					set_cost(t_stack_node *a, t_stack_node *b);
 void					cost_calc(t_stack_node *node, int len_a, int len_b);
 t_stack_node			*ft_lstnew2(int n);
 t_stack_node			*get_cheapest(t_stack_node *a);
 t_stack_node			*find_max_node(t_stack_node *stack);
 t_stack_node			*find_min_node(t_stack_node *stack);
 
-/*              	OPERATIONS		         */
+/*              	OPERATIONS					*/
 void					sa(t_stack_node *a, int i);
 void					sb(t_stack_node *b, int i);
 void					ss(t_stack_node *a, t_stack_node *b, int i);
@@ -70,19 +72,13 @@ void					rra(t_stack_node **a, int i);
 void					rrb(t_stack_node **b, int i);
 void					rrr(t_stack_node **a, t_stack_node **b);
 
-/*             		FUNCTIONS		        */
-int						manage_input(int argc, char **argv, t_stack_node **a);
-void					ft_error(void);
+/*             		ALGORITHM					*/
 void					sort_three(t_stack_node **a);
-void					min_on_top(t_stack_node **stack);
-void					sort_algo(t_stack_node **a, t_stack_node **b);
 void					set_top(t_stack_node **stack, t_stack_node *top,
 							int flag);
 void					set_rr_rrr(t_stack_node **a, t_stack_node **b,
 							t_stack_node *cheapest);
-
-/*              	TEST FUNCTIONS		         */
-void					print_list(t_stack_node **a);
-void					print_list_info(t_stack_node **lst);
+void					min_on_top(t_stack_node **stack);
+void					sort_algo(t_stack_node **a, t_stack_node **b);
 
 #endif

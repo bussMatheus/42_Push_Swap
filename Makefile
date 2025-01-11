@@ -6,12 +6,12 @@
 #    By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/09 17:08:28 by mely-pan          #+#    #+#              #
-#    Updated: 2024/12/09 17:34:56 by mely-pan         ###   ########.fr        #
+#    Updated: 2025/01/02 18:49:42 by mely-pan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = push_swap.c manage_input.c clean.c \
-	ft_error.c ft_lst.c ft_lst_utils.c test_ft.c \
+	ft_error.c ft_lst.c ft_lst_utils.c \
 	p_and_rr_operations.c s_operations.c r_operations.c \
 	algorithm.c ft_lst_utils2.c
 
