@@ -6,7 +6,7 @@
 /*   By: mely-pan <mely-pan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:05:33 by mely-pan          #+#    #+#             */
-/*   Updated: 2024/12/18 20:06:57 by mely-pan         ###   ########.fr       */
+/*   Updated: 2025/01/11 17:57:02 by mely-pan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	check_str_numbers(char **numbers, t_stack_node **a)
 	while (--i >= 0)
 	{
 		if (!ft_isvalid_n(numbers[i]))
-			return (free_splited(numbers), 0);
+			return (free_splited(numbers), free_lst(a), 0);
 		n = ft_atoi(numbers[i]);
 		if (n > 2147483647 || n < -2147483648 || ft_isdup(numbers, n, i, 0))
 			return (free_lst(a), free_splited(numbers), 0);
@@ -97,8 +97,6 @@ int	manage_input(int argc, char **argv, t_stack_node **a)
 	int		i;
 
 	i = 0;
-	if (argc == 1 || !argv[1][0])
-		return (0);
 	if (argc == 2)
 	{
 		str_numbers = ft_split(argv[1], ' ');
